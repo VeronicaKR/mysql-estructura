@@ -9,8 +9,7 @@ db.usuari.insertMany([
         'datanaixement': '05/03/2017',
         'sexe': 'mascle',
         'pais': 'spain',
-        'cp': '43820',
-        'subscripcions': { '$ref': 'usuari', '$_id': ObjectId('000000000000000000000002') }
+        'cp': '43820'        
     },
     {
         '_id': ObjectId('000000000000000000000002'),
@@ -20,14 +19,8 @@ db.usuari.insertMany([
         'datanaixement': '05/03/2010',
         'sexe': 'femella',
         'pais': 'spain',
-        'cp': '43820',
-        'subscripcions': {
-            '$ref': 'usuari',
-            '$_id': ObjectId('000000000000000000000001'),
-            '$ref': 'usuari',
-            '$_id': ObjectId('000000000000000000000003')
-        }
-    },
+        'cp': '43820'
+          },
     {
         '_id': ObjectId('000000000000000000000003'),
         'mail': 'mail@mail.com',
@@ -36,13 +29,7 @@ db.usuari.insertMany([
         'datanaixement': '05/03/2012',
         'sexe': 'femella',
         'pais': 'spain',
-        'cp': '43820',
-        'subscripcions': {
-            '$ref': 'usuari',
-            '$_id': ObjectId('000000000000000000000001'),
-            '$ref': 'usuari',
-            '$_id': ObjectId('000000000000000000000002')
-        }
+        'cp': '43820'        
     }
 ]);
 db.videos.insertMany([
@@ -161,19 +148,33 @@ db.canal.insertMany([
         '_id': ObjectId('000000000000000000000001'),
         'nom':'canal de gosos',
         'descripcio':'canal amb videos de gosos',
-        'data': new Date("2022-01-05T15:02:01") 
+        'data': new Date("2022-01-05T15:02:01") ,
+        'subscripcions': { 
+            '$ref': 'usuari', 
+            '$_id': ObjectId('000000000000000000000002') 
+        }
     },
     {
         '_id': ObjectId('000000000000000000000002'),
         'nom':'canal de gats',
         'descripcio':'canal amb videos de gats',
-        'data': new Date("2022-01-05T15:02:01") 
+        'data': new Date("2022-01-05T15:02:01") ,
+        'subscripcions': {
+            'usuari':
+            [{'$_id': ObjectId('000000000000000000000001')},
+            {'$_id': ObjectId('000000000000000000000003')}]
+        }
     },
     {
         '_id': ObjectId('000000000000000000000003'),
         'nom':'canal de gosos i gats',
         'descripcio':'canal amb videos de gosos i gats',
-        'data': new Date("2022-01-05T15:02:01") 
+        'data': new Date("2022-01-05T15:02:01") ,
+        'subscripcions': {
+            'usuari':
+            [{'$_id': ObjectId('000000000000000000000002')},
+            {'$_id': ObjectId('000000000000000000000003')}]
+        }
     }
 ]);
 db.playlist.insertMany([
