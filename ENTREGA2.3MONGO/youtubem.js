@@ -152,7 +152,8 @@ db.canal.insertMany([
         'subscripcions': { 
             '$ref': 'usuari', 
             '$_id': ObjectId('000000000000000000000002') 
-        }
+        },
+        'creador del canal': {'$ref': 'usuari', '$_id': ObjectId('000000000000000000000001')}
     },
     {
         '_id': ObjectId('000000000000000000000002'),
@@ -163,7 +164,8 @@ db.canal.insertMany([
             'usuari':
             [{'$_id': ObjectId('000000000000000000000001')},
             {'$_id': ObjectId('000000000000000000000003')}]
-        }
+        },
+        'creador del canal': {'$ref': 'usuari', '$_id': ObjectId('000000000000000000000002')}
     },
     {
         '_id': ObjectId('000000000000000000000003'),
@@ -174,7 +176,8 @@ db.canal.insertMany([
             'usuari':
             [{'$_id': ObjectId('000000000000000000000002')},
             {'$_id': ObjectId('000000000000000000000003')}]
-        }
+        },
+        'creador del canal': {'$ref': 'usuari', '$_id': ObjectId('000000000000000000000001')}
     }
 ]);
 db.playlist.insertMany([
