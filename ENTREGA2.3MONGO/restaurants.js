@@ -1,4 +1,4 @@
-[
+db.restaurants.insertMany([
   {
     "address": {
       "building": "1007",
@@ -191117,4 +191117,4 @@
     "name": "Chopstix Restaurant",
     "restaurant_id": "40900694"
   }
-]
+]);
