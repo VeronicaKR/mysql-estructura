@@ -185,19 +185,25 @@ db.playlist.insertMany([
         '_id': ObjectId('000000000000000000000001'),
         'nom':'playlist gosos',
         'datacreacio':new Date("2022-01-08T18:02:01") ,
-        'estat':'public'
+        'estat':'public',
+        'id_usuari':{'$ref': 'usuari','_id': ObjectId('000000000000000000000001')},
+        'id_video':{'$ref': 'video','_id': ObjectId('000000000000000000000001')}
     },
     {
         '_id': ObjectId('000000000000000000000002'),
         'nom':'playlist gats',
         'datacreacio':new Date("2022-01-08T18:02:01") ,
-        'estat':'public'
+        'estat':'public',
+        'id_usuari':{'$ref': 'usuari','_id': ObjectId('000000000000000000000002')},
+        'id_video':{'$ref': 'video','_id': ObjectId('000000000000000000000002')}
     },
     {
         '_id': ObjectId('000000000000000000000003'),
         'nom':'playlist gosos i gats',
         'datacreacio':new Date("2022-01-08T18:02:01") ,
-        'estat':'public'
+        'estat':'public',
+        'id_usuari':{'$ref': 'usuari','_id': ObjectId('000000000000000000000001')},
+        'id_video':{'$ref': 'video','_id': ObjectId('000000000000000000000001')}
     }
 ]);
 db.comentari.insertMany([
